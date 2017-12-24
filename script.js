@@ -1,9 +1,12 @@
 var scratchArea = document.getElementById("scratchArea");
-var textRep = 'password123';
+var textRep = '';
 var cl = console.log;
 let text = "";
 var arrText = [];
 var ids = [];
+var data = [];
+var endpoint = "https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=15cd0ac3285c47c296635e11c346a978";
+
 
 
 function sortTextId() {
@@ -50,12 +53,32 @@ scratchArea.addEventListener("mouseover", function(event) {
         let oText = '';
         if (`textField ${o.class}` === fieldClass) {
             oText = o.original;
+
             field.innerText = oText;
         }
     }
 });
 
-replaceSharp();
+
+function apiConnect() {
+    axios.get(endpoint)
+        .then(response => {
+            data = response.data;
+            getNameOfField(data);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+}
+
+function getNameOfField(data) {
+    console.log(data.articles[0].author);
+    textRep = data.articles[0].author;
+
+    replaceSharp();
+
+}
+
+apiConnect();
 
 console.table(arrText);
-cl(ids)
