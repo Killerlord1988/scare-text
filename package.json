@@ -1,0 +1,23 @@
+{
+  "name": "scare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Killerlord1988/scare-text.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Killerlord1988/scare-text/issues"
+  },
+  "homepage": "https://github.com/Killerlord1988/scare-text#readme",
+  "dependencies": {
+    "axios": "^0.17.1"
+  }
+}
