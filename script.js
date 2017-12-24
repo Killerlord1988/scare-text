@@ -73,6 +73,10 @@ function apiConnect() {
 
 function getNameOfField(data) {
     console.log(data.articles[0].author);
+
+    if (data.articles[0].author === null) {
+        textRep = 'Ну такое...';
+    }
     textRep = data.articles[0].author;
 
     replaceSharp();
